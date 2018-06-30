@@ -1,6 +1,7 @@
 function BST(){
     this.root = null;
 }
+
 function Node(val){
     this.value = val;
     this.left = null;
@@ -15,6 +16,11 @@ function Node(val){
         }
     }
 }
+first.prototype.insert = function(val){
+    if(first.root.value == null){ first.root = val; return first.root; }
+
+}
+
 // https://www.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/
 // AND 
 // https://en.m.wikipedia.org/wiki/Self-balancing_binary_search_tree
