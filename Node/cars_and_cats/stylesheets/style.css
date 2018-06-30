@@ -1,0 +1,9 @@
+body {
+    background-color: teal;
+}
+img {
+    width: 400px;
+    height: auto;
+    border: black;
+    border-image-width: 9px;
+}
