@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <h2>Details page for <%= cat.name %> </h2> 
+        <img src='/static/images/' + <%= cat.name %> + '.jpg'>
+
+        <p>Favorite Food: <%= cat.food %></p>
+        <p>Age: <%= cat.age %></p>
+        <p>Sleeping Spots:</p>
+        
+        <% for (var x in cat.spots) { %>
+            <p> <%= cat.spots[x] %> </p>
+        <% } %>
+    </body>
+</html>
