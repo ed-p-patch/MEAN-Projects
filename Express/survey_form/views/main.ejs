@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <h3>Survey Form</h3>
+        <div>
+            <form action="/process" method="POST">
+                <label>Your Name: <input type="text" name="name"></label>
+                <label>Dojo Location: 
+                    <select name="loca">
+                        <option value="texas">Texas</option>
+                        <option value="other">Other</option>
+                    </select>
+                </label>
+                <label>Favorite Language: 
+                    <select name="lang">
+                        <option value="javascript">JavaScript</option>
+                        <option value="php">PHP</option>
+                    </select>    
+                </label>
+                <label>Comment: </label>
+                <input type="textarea" name="comm">
+                <input type="submit" value="Post Information">
+            </form>
+        </div>
+    </body>
+</html>
