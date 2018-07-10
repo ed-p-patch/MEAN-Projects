@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var socket = io.connect();
+
+                $('#result').submit(function(e){
+                    e.preventDefault();
+
+                    socket.emit("post_form", {
+                        name: $('#name').val(),
+                        location: $('#loca').val(),
+                        language: $('lang').val(),
+                        comment: $('comm').val(),
+                    });
+                });
+
+                socket.on('success', function(data){
+                    $('#result').html("you emitted the following information to the server: "+JSON.stringify(data.response));
+                });
+                socket.on('rand_num', function(data){
+                    $('#number').html("Luck Number emitted by the server is: "+JSON.stringify(data.response));
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <h3>Survey Form</h3>
+        <div>
+            <div id="result">
+            </div>
+            <div id="num">
+            </div>
+            
+            <form action="/process" method="POST">
+                <label>Your Name: <input type="text" name="name"></label>
+                <label>Dojo Location: 
+                    <select name="loca">
+                        <option value="texas">Texas</option>
+                        <option value="other">Other</option>
+                    </select>
+                </label>
+                <label>Favorite Language: 
+                    <select name="lang">
+                        <option value="javascript">JavaScript</option>
+                        <option value="php">PHP</option>
+                    </select>    
+                </label>
+                <label>Comment: </label>
+                <input type="textarea" name="comm">
+                <input type="submit" value="Post Information">
+            </form>
+        </div>
+    </body>
+</html>
