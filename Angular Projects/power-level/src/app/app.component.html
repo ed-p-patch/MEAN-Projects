@@ -1,0 +1,22 @@
+<div>
+  <legend>Power Component</legend>
+  <form (submit)="calculate()">
+    <table>
+      <tr>
+        <td>Initial Power Level: <input type="text" name="pow" max="100" min="0" [(ngModel)]="pow"></td>
+        <td><input type="submit" value="calculate powers"></td>
+        <td> - - </td>
+      </tr>
+      <tr>
+        <td> <human-component [pow]="pow"></human-component> </td>
+        <td> <saiyan-component [pow]="pow"></saiyan-component> </td>
+        <td> <super-saiyan-component [pow]="pow"></super-saiyan-component> </td>
+      </tr>
+      <tr>
+        <td> <super-saiyan-two-component [pow]="pow"></super-saiyan-two-component> </td>
+        <td> <super-saiyan-two-three-component [pow]="pow"></super-saiyan-two-three-component> </td>
+        <td> <super-saiyan-two-four-component [pow]="pow"></super-saiyan-two-four-component> </td>
+      </tr>
+    </table>
+  </form>
+</div>
