@@ -1,0 +1,92 @@
+<div style="text-align:center">
+  <h1>Registration Form</h1>
+  
+  <div class="success" *ngIf="new_user">
+    <p>"Thank you for registering with us {{new_user.name}}.</p>
+    <p>We just sent you a confirmation email at {{new_user.email}},</p> 
+    <p>and we will send all mail to {{new_user.street}}, {{new_user.city}}, {{new_user.state}}.</p>
+    <p>Have a wonderful day!"</p>
+  </div>
+
+  <h2>Account Information</h2>
+  <form (submit)="onSubmit ()">
+    <table>
+      <tr>
+        <td>*First Name</td> 
+        <td>
+          <input type="text" name="fname" required
+          [(ngModel)]="user.fname" #fname="ngModel">
+        </td>          
+      </tr>
+      <tr>
+        <td>*Last Name</td> 
+        <td>
+          <input type="text" name="lname" required
+          [(ngModel)]="user.lname" #lname="ngModel">
+        </td>
+      </tr>
+      <tr>
+        <td>*Email</td>
+        <td> 
+          <input type="text" name="email" required 
+          pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+          [(ngModel)]="user.email" #email="ngModel">
+        </td>
+      </tr>
+      <tr>
+        <td>*Password</td>
+        <td>
+          <input type="password" name="pass1" required
+          minlength="16"
+          [(ngModel)]="user.pass1" #pass1="ngModel">
+        </td>
+      </tr>
+      <tr>
+        <td>*Password Confirmation</td>
+        <td>
+          <input type="password" name="password" required 
+          minlength="16"
+          [(ngModel)]="user.password" #password="ngModel">
+        </td>
+      </tr>
+      <tr>
+        <td>*Street Address</td>
+        <td>
+          <input type="text" name="street" required 
+          [(ngModel)]="user.street" #street="ngModel">
+        </td>
+      </tr>
+      <tr>
+        <td>Unit/Apt #</td>
+        <td>
+          <input type="text" name="unit"
+          [(ngModel)]="user.unit">
+        </td>
+      </tr>
+      <tr>
+        <td>*City </td>
+        <td>
+          <input type="text" name="city" required 
+          [(ngModel)]="user.city" #city="ngModel">
+        </td>
+      </tr>
+      <tr>
+        <td>*State</td>
+        <td>
+          <input type="text" name="state" required 
+          [(ngModel)]="user.state" #state="ngModel">
+        </td>
+      </tr>
+      <tr>
+        <td>*I'm feeling lucky</td>
+        <td>  
+          Yes <input class="input-radio" type="radio" name="luck" value='1' checked="checked" [(ngModel)]="user.luck">
+          No <input class="input-radio" type="radio" name="luck" value='2' [(ngModel)]="user.luck">
+        </td>
+      </tr>
+      <tr>
+        <input type="submit" value="Register">
+      </tr>
+    </table>
+  </form>
+</div>
