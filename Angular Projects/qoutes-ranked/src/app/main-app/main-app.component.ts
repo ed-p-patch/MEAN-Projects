@@ -28,25 +28,27 @@ export class MainAppComponent{
   upvote(qoute){
     const index = this.my_qoutes.indexOf(qoute);
     this.my_qoutes[index].score += 1;
+    this.my_qoutes.sort(function(obj1, obj2){ return obj1.score - obj2.score; });
   }
 
   downvote(qoute){
     const index = this.my_qoutes.indexOf(qoute);
     this.my_qoutes[index].score -= 1;
+    this.my_qoutes.sort(function(obj1, obj2){ return obj1.score - obj2.score; });
   }
 
   make_qoute(qoute){
     console.log(qoute);
     this.my_qoutes.push(qoute);
+    this.my_qoutes.sort(function(obj1, obj2){ return obj1.score - obj2.score; });
   }
 
   delete_qoute(qoute){
     console.log(qoute);
     const index = this.my_qoutes.indexOf(qoute);
     this.my_qoutes.splice(index, 1);
+    this.my_qoutes.sort(function(obj1, obj2){ return obj1.score - obj2.score; });
   }
-
-  sort(my_qoutes){
-    
-  }
+  //https://davidwalsh.name/array-sort
+  //this.my_qoutes.sort(function(obj1, obj2){ return obj1.score - obj2.score; });
 }
