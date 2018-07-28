@@ -1,0 +1,28 @@
+<div class="wrapper">
+    <table>
+      <tr>
+        <th>Qoutes Submitted</th>
+        <th></th>
+        <th></th>
+      </tr>
+
+      <div *ngFor="let qoute of qoutes">
+        <tr>
+          <td><span style="font-style: italic">{{qoute.qoute}}</span></td>
+          <td></td>
+          <td><button (click)='up(qoute)'>Vote-Up</button></td>
+        </tr>
+        <tr>
+          <td>by: {{qoute.author}}</td>
+          <td><h2>{{qoute.score}}</h2></td>
+          <td><button (click)='down(qoute)'>Vote-Down</button></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><button (click)='deleted_event(qoute)'>Delete</button></td>
+        </tr>
+      </div>
+    
+    </table>
+</div>

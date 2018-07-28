@@ -1,0 +1,9 @@
+<app-add-qoute [qoutes]="my_qoutes" 
+    (created_event)='make_qoute($event)'>
+</app-add-qoute>
+
+<app-show-qoute [qoutes]="my_qoutes" 
+    (deleted_event)='delete_qoute($event)'
+    (up_event)='upvote($event)'
+    (down_event)='downvote($event)'>
+</app-show-qoute>
