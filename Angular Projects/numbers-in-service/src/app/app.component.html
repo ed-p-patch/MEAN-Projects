@@ -1,0 +1,16 @@
+<div style="text-align:center">
+  <app-sequence-alpha
+    [a_numbers]="alpha_numbers"
+    (generate_a)='gen_a($event)'>
+  </app-sequence-alpha>
+  
+  <app-sequence-beta
+    [b_numbers]="beta_numbers"
+    (generate_b)='gen_b($event)'>
+  </app-sequence-beta>
+  
+  <app-sequence-gamma
+    [g_numbers]="gamma_numbers"
+    (generate_g)='gen_g($event)' >
+  </app-sequence-gamma>
+</div>
