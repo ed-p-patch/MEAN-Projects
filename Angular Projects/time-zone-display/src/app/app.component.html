@@ -1,0 +1,14 @@
+<div style="text-align:center">
+  <h1>
+    Welcome to US Time-Zone Display!
+  </h1>
+  <div class="button-row">
+    <button (click)="onClick(0)" [ngClass]="{selected: last_click===0}">PST </button>
+    <button (click)="onClick(1)" [ngClass]="{selected: last_click===1}">MST </button>
+    <button (click)="onClick(2)" [ngClass]="{selected: last_click===2}">CST </button>
+    <button (click)="onClick(3)" [ngClass]="{selected: last_click===3}">EST </button>
+    <button (click)="onClick(4)">Clear</button>
+  </div>
+  <p>{{now|date: 'full' }}</p>
+</div>
+

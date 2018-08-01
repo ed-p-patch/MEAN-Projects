@@ -1,0 +1,19 @@
+<h1>Add a Qoute</h1>
+<form #qouteForm="ngForm">
+  <div class="errors" *ngIf="(qoute.touched || qoute.dirty) && qoute.errors">
+    <p *ngIf="qoute.errors.required">You must enter a qoute</p>
+  </div>
+
+  <textarea rows="5" cols="40" 
+    required
+    minlenth="2" [(ngModel)]="n_qoute.qoute" #qoute="ngModel" name="qoute"></textarea>
+
+  <div class="errors" *ngIf="(author.touched || author.dirty) && author.errors">
+    <p ng*If="author.errors.required">You must cite the Author</p>
+    <p ng*If="author.errors.minlength">Author should be at least 2 characters long (If you are qouting Q from star trek, sorry)</p>
+  </div>
+  
+  <input type="text" name="author" [(ngModel)]="n_qoute.author" #author="ngModel" ng-required="">
+  
+  <button (click)='create(n_qoute)'>Add Qoute</button>
+</form>

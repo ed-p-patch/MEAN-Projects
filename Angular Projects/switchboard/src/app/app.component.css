@@ -1,0 +1,12 @@
+
+.on { background-color: green; }
+.off { background-color: red; }
+.switches button {
+    display: inline-block;
+    margin: 10px;
+    height: 75px;
+    width: 75px;
+    border: 10px solid #331a00;
+    color: white;
+    font-weight: bold;
+}
